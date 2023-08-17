@@ -6,7 +6,8 @@ enum ObjectType
 {
 	Type_Trap,
 	Type_Player,
-	Type_Goal
+	Type_Goal,
+	Type_Wall
 };
 
 class Object

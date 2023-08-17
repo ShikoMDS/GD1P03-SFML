@@ -21,9 +21,12 @@ Object::Object(ObjectType _Type, sf::Vector2f _Position)
 		m_ObjShape.setFillColor(sf::Color::Yellow);
 			break;
 
-		default:
+		case Type_Wall:
+		m_ObjShape.setFillColor(sf::Color::White);
 			break;
 
+		default:
+			break;
 	}
 }
 
@@ -39,22 +42,27 @@ void Object::Update()
 
 void Object::Input()
 {
-	m_ObjSpeed = sf::Vector2f(0, 0);
-	if(sf::Keyboard::isKeyPressed((sf::Keyboard::Up)))
+	m_ObjSpeed = sf::Vector2f(0, 0); // Comment out for acceleration
+	
+	if(sf::Keyboard::isKeyPressed((sf::Keyboard::W)))
 	{
-		m_ObjSpeed.y = -1.0f;
+		m_ObjSpeed.y += -1.0f; // Use += for acceleration
 	}
-	if (sf::Keyboard::isKeyPressed((sf::Keyboard::Down)))
+
+	if (sf::Keyboard::isKeyPressed((sf::Keyboard::S)))
 	{
-		m_ObjSpeed.y = 1.0f;
+		m_ObjSpeed.y += 1.0f;
 	}
-	if (sf::Keyboard::isKeyPressed((sf::Keyboard::Left)))
+
+	if (sf::Keyboard::isKeyPressed((sf::Keyboard::A)))
 	{
-		m_ObjSpeed.x = -1.0f;
+		m_ObjSpeed.x += -1.0f;
 	}
-	if (sf::Keyboard::isKeyPressed((sf::Keyboard::Right)))
+
+	if (sf::Keyboard::isKeyPressed((sf::Keyboard::D)))
 	{
-		m_ObjSpeed.x = 1.0f;
+		m_ObjSpeed.x += 1.0f;
 	}
+
 	m_ObjShape.move(m_ObjSpeed);
 }
