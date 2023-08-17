@@ -1,10 +1,12 @@
 #include "Utensils/Object.h"
 
+// Constructor. Each object has a type and position
 Object::Object(ObjectType _Type, sf::Vector2f _Position)
 {
 	m_ObjShape.setSize(sf::Vector2f(30, 30));
 	m_ObjShape.setPosition(_Position);
 
+	// Switch statement allows colour change based on the object type, part of the object constructor above
 	switch (_Type)
 	{
 	case Type_Trap:
