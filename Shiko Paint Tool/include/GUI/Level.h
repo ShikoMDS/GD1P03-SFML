@@ -9,6 +9,7 @@ public:
 	int LevelHeight = 15;
 
 	std::vector<Object*> m_LevelObjects;
+	sf::Texture m_TrapTexture;
 
 	Level();
 	~Level();
