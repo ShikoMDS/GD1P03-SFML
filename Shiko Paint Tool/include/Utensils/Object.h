@@ -17,9 +17,11 @@ public:
 	ObjectType m_OjectType;
 	sf::Vector2f m_ObjSpeed;
 
+	float m_SpeedScalar = 60.0f;
+
 	Object(ObjectType _Type, sf::Vector2f _Position);
 	~Object();
 
 	void Update();
-	void Input();
+	void Input(float _dt);
 };

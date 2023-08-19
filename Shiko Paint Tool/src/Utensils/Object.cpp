@@ -11,22 +11,22 @@ Object::Object(ObjectType _Type, sf::Vector2f _Position)
 	{
 	case Type_Trap:
 		m_ObjShape.setFillColor(sf::Color::Red);
-			break;
+		break;
 
-		case Type_Player:
+	case Type_Player:
 		m_ObjShape.setFillColor(sf::Color::Blue);
-			break;
+		break;
 
-		case Type_Goal:
+	case Type_Goal:
 		m_ObjShape.setFillColor(sf::Color::Yellow);
-			break;
+		break;
 
-		case Type_Wall:
+	case Type_Wall:
 		m_ObjShape.setFillColor(sf::Color::White);
-			break;
+		break;
 
-		default:
-			break;
+	default:
+		break;
 	}
 }
 
@@ -40,7 +40,7 @@ void Object::Update()
 
 }
 
-void Object::Input()
+void Object::Input(float _dt)
 {
 	m_ObjSpeed = sf::Vector2f(0, 0); // Comment out for acceleration
 	
@@ -64,5 +64,5 @@ void Object::Input()
 		m_ObjSpeed.x += 1.0f;
 	}
 
-	m_ObjShape.move(m_ObjSpeed);
+	m_ObjShape.move(m_ObjSpeed * m_SpeedScalar * _dt);
 }

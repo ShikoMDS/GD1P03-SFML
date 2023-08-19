@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Utensils\CanvasManager.cpp" />
     <ClCompile Include="src\GUI\Camera.cpp" />
     <ClCompile Include="src\GUI\Level.cpp" />
     <ClCompile Include="src\GUI\UIElement.cpp" />
@@ -140,6 +141,7 @@
     <ClCompile Include="src\Utensils\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Utensils\CanvasManager.h" />
     <ClInclude Include="include\GUI\Camera.h" />
     <ClInclude Include="include\GUI\Level.h" />
     <ClInclude Include="include\GUI\UIElement.h" />
