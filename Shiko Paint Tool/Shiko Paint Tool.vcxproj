@@ -138,6 +138,7 @@
     <ClCompile Include="src\GUI\Level.cpp" />
     <ClCompile Include="src\GUI\UIElement.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Utensils\FileManager.cpp" />
     <ClCompile Include="src\Utensils\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,7 @@
     <ClInclude Include="include\GUI\Camera.h" />
     <ClInclude Include="include\GUI\Level.h" />
     <ClInclude Include="include\GUI\UIElement.h" />
+    <ClInclude Include="include\Utensils\FileManager.h" />
     <ClInclude Include="include\Utensils\Object.h" />
     <ClInclude Include="include\SFML\Audio.hpp" />
     <ClInclude Include="include\SFML\Audio\AlResource.hpp" />

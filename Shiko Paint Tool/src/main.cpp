@@ -4,6 +4,7 @@
 #include "GUI/UIElement.h"
 #include "GUI/Camera.h"
 #include "Utensils/CanvasManager.h"
+#include "Utensils/FileManager.h"
 
 // ALWAYS BUILD IN RELEASE AT LEAST ONCE A DAY
 
@@ -15,6 +16,8 @@ int main()
     // Main window creation
     sf::RenderWindow Window(sf::VideoMode(800, 600), "SFML works!");
     Window.setFramerateLimit(60); // Sets to 60 fps
+
+    FileManager g_FileManager(Window.getSystemHandle());
 
 	// Secondary window creation
     sf::RenderWindow OptionsWindow(sf::VideoMode(400, 400), "Options Window");
@@ -96,6 +99,28 @@ int main()
             if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left)
             {
                 g_CanvasManager.EndDraw();
+            }
+
+            if (event.type == sf::Event::KeyPressed)
+            {
+	            if (event.key.code == sf::Keyboard::F5)
+	            {
+                    // Saving
+                    g_Canvas->getTexture().copyToImage().saveToFile(g_FileManager.SaveFile() += ".png");
+	            }
+
+            	if (event.key.code == sf::Keyboard::F9)
+	            {
+                    // Loading
+                    sf::Texture NewTexture;
+                    NewTexture.loadFromFile(g_FileManager.OpenFile());
+
+                    sf::RectangleShape NewShape;
+                    NewShape.setSize(sf::Vector2f(NewTexture.getSize().x, NewTexture.getSize().y));
+                    NewShape.setTexture(&NewTexture);
+
+                    g_Canvas->draw(NewShape);
+	            }
             }
         }
 

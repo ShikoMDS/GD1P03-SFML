@@ -33,6 +33,9 @@
     <ClCompile Include="src\Utensils\CanvasManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Utensils\FileManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\SFML\Audio\AlResource.hpp">
@@ -348,6 +351,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Utensils\CanvasManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Utensils\FileManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
