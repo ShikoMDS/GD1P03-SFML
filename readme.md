@@ -1,5 +1,3 @@
-*NOTE* I used the wrong solution and project folders to create this archive and am not bothered to create a new solution, hence why it is named as Shiko Paint Tool and has my paint tool project's corresponding folders.
-
 # GD1P03-SFML
 
 Archive for GD1P03 Remote Session practical classes.
